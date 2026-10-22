@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#087f63">
+  <title>Bilap — تواصل بروح مغربية</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="zellige" aria-hidden="true"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <div class="brand-mark">ب</div>
+      <div><h1>bilap</h1><p>تواصل بروح مغربية 🇲🇦</p></div>
+      <span class="online-dot" title="Bilap"></span>
+    </header>
+
+    <section id="authView" class="auth-card">
+      <div class="tile-emblem">✦</div>
+      <h2>مرحبا بك فـ Bilap</h2>
+      <p class="muted">خلي المسافة تقصر، والهدرة تجمعنا.</p>
+      <label for="phone">رقم الهاتف بالصيغة الدولية</label>
+      <input id="phone" type="tel" placeholder="+2126XXXXXXXX" autocomplete="tel">
+      <button id="sendCode" class="primary">صيفط ليا رمز التحقق</button>
+      <div id="verifyArea" class="hidden">
+        <label for="code">رمز التحقق اللي وصلك فـ SMS</label>
+        <input id="code" inputmode="numeric" autocomplete="one-time-code" maxlength="10" placeholder="دخل الرمز">
+        <button id="verifyCode" class="primary">تأكيد الرقم والدخول</button>
+      </div>
+      <p id="authStatus" class="status" role="status"></p>
+      <small>ما كنطلبوش كلمة سر ديال حسابات أخرى. استعمل رقمك أنت فقط.</small>
+    </section>
+
+    <section id="chatView" class="chat-layout hidden">
+      <aside class="people-panel">
+        <div class="panel-heading"><h2>المحادثات</h2><button id="logout" class="ghost">خروج</button></div>
+        <p class="muted small">اختار مستخدماً مسجلاً باش تبدا الدردشة.</p>
+        <div id="people" class="people-list"></div>
+      </aside>
+      <section class="conversation">
+        <div id="emptyChat" class="empty-chat"><div class="tile-emblem large">✦</div><h2>الهدرة كتجمعنا</h2><p>اختار شي واحد من اللائحة.</p></div>
+        <div id="activeChat" class="hidden active-chat">
+          <div class="conversation-head"><div class="avatar">ب</div><div><h3 id="chatName">محادثة</h3><p class="muted small">Bilap Connect</p></div></div>
+          <div id="messages" class="messages"></div>
+          <form id="sendForm" class="composer"><input id="messageInput" maxlength="2000" placeholder="كتب رسالتك..." autocomplete="off"><button class="primary send" type="submit" aria-label="إرسال">➤</button></form>
+        </div>
+      </section>
+    </section>
+    <footer>صُنع بحب فالمغرب <span>◆</span></footer>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@microsoft/signalr@8.0.7/dist/browser/signalr.min.js"></script>
+  <script src="/app.js"></script>
+</body>
+</html>
